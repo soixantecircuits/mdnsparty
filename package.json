@@ -1,0 +1,29 @@
+{
+  "name": "mdnsparty",
+  "version": "1.0.0",
+  "description": "a simple zeroconf party",
+  "main": "the_horde.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node the_horde.js",
+    "server": "node the_collector.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soixantecircuits/mdnsparty.git"
+  },
+  "keywords": [
+    "mdns",
+    "example",
+    "mocking"
+  ],
+  "author": "gabrielstuff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soixantecircuits/mdnsparty/issues"
+  },
+  "homepage": "https://github.com/soixantecircuits/mdnsparty#readme",
+  "dependencies": {
+    "mdns": "^2.3.0"
+  }
+}
