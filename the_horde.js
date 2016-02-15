@@ -5,11 +5,14 @@ let txt_record = {
   name: 'snap-xx'
 }
 let total_snap = 100
+let max_snap = total_snap
 let services = []
 
 function createAdvertisement (name, index) {
+  console.log(`creating horde:${index}/${max_snap}`)
   try {
     txt_record.name = name
+    txt_record.number = index
     services.push(mdns.createAdvertisement(mdns.tcp('snap'), 4321+index, { txtRecord: txt_record }))
     services[services.length - 1].on('error', handleError)
     services[services.length - 1].start()
@@ -31,6 +34,6 @@ function handleError (error, name) {
   }
 }
 
-while (total_snap--) {
+while (total_snap--) { 
   createAdvertisement(`snap-${total_snap}`, total_snap)
 }
