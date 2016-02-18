@@ -13,7 +13,7 @@ function createAdvertisement (name, index) {
   try {
     txt_record.name = name
     txt_record.number = index
-    services.push(mdns.createAdvertisement(mdns.tcp('snap'), 4321+index, { txtRecord: txt_record }))
+    services.push(mdns.createAdvertisement(mdns.tcp('snap'), 4321+index, { txtRecord: txt_record, name: require('os').hostname()+'-'+index }))
     services[services.length - 1].on('error', handleError)
     services[services.length - 1].start()
   } catch (ex) {
